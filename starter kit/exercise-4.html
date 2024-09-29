@@ -103,6 +103,7 @@
 			content: url(icons/icon-arrow-right.svg);
 			height: 17px;
 			opacity: 0;
+			transform: translateX(-1rem)
 		}
 
 		.has-submenu ul a:hover {
@@ -112,6 +113,7 @@
 
 		.has-submenu ul a:hover::after {
 			opacity: 1;
+			transform: translateX(0);
 		}
 
 		.has-submenu:hover::after {
@@ -154,9 +156,19 @@
 			transform: translateX(0);
 		}
 
+		.has-submenu ul a {
+			transition-property: background-color, padding;
+		}
+
+		.has-submenu ul a::after {
+			transition-property: opacity, transform;
+		}
+
 		nav ul a,
 		.has-submenu::after,
-		.has-submenu ul {
+		.has-submenu ul,
+		.has-submenu ul a,
+		.has-submenu ul a::after {
 			transition-duration: var(--def-transition-duration);
 			transition-timing-function: ease-in-out;
 		}
