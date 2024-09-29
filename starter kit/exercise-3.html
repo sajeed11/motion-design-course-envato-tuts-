@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,9 +52,26 @@
 			border: 1px solid #6E32EF;
 		}
 
-		/* Air */
+		.btn {
+			/* transition-property: background-color;
+			transition-duration: .4s;
+			transition-timing-function: ease-in-out;
+			transition-delay: 1s; */
+
+			transition: background-color .4s ease-in-out, color .4s ease-in-out, border-color .4s ease-in-out;
+
+			/* Not recommended in terms of performance */
+			/* transition: all .4s ease-in-out; */
+		}
+
+		.btn:hover {
+			background-color: white;
+			color: #151618;
+			border-color: #151618;
+		}
 	</style>
 </head>
+
 <body>
 	<header>
 		<a href="/"><img src="images/logo-l4.svg" alt="Logo"></a>
@@ -70,4 +88,5 @@
 		</nav>
 	</header>
 </body>
+
 </html>
