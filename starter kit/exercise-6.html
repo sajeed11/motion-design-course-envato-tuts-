@@ -230,7 +230,7 @@
 		}
 
 		.opened {
-			background-size: 24rem;
+			background-size: 23rem;
 			flex-basis: 32rem;
 			cursor: auto;
 		}
@@ -260,11 +260,57 @@
 			font-weight: 700;
 		}
 
+		.accordion--item {
+			transition-property: flex-basis, background-size, padding;
+		}
 
-		/* Air */
-		/* In the video I'm using the following icons and imagery: */
-		/* - https://elements.envato.com/photo-realistic-weather-icon-set-K7MGJ3 */
-		/* - https://elements.envato.com/weather-icon-pack-3UHW3R3 */
+		.accordion--item:hover:not(.opened) {
+			background-size: 20rem;
+			padding-block: 3rem;
+		}
+
+		.accordion--item:hover:not(.opened) .bottom-temp {
+			transform: translate3d(0, -1rem, 0);
+		}
+
+		.bottom-temp {
+			transition-property: transform, opacity;
+		}
+
+		.opend .bottom-temp {
+			transform: translate3d(0, 2rem, 0);
+		}
+
+		.temp,
+		.readings {
+			transition-property: transform, opacity;
+		}
+
+		.temp {
+			transform: translate3d(0, -4rem, 0);
+		}
+
+		.readings {
+			transform: translate3d(0, 4rem, 0);
+		}
+
+		.opened .temp,
+		.opened .readings {
+			transform: translate3d(0, 0, 0);
+		}
+
+		.date li:nth-child(2) {
+			transition-property: color;
+		}
+
+		.accordion--item,
+		.bottom-temp,
+		.temp,
+		.readings,
+		.date li:nth-child(2) {
+			transition-duration: var(--def-transition-duration);
+			transition-timing-function: ease-in-out;
+		}
 	</style>
 </head>
 
