@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,8 @@
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700&display=swap"
+		rel="stylesheet">
 
 	<style>
 		/* This design is inspired by Zed Dash's project */
@@ -105,7 +107,7 @@
 		}
 
 		.cloudy {
-			background: var(--color-cloudy) url(/images/cloudy@c.png);
+			background: var(--color-cloudy) url(images/3d-fluency-partly-cloudy-day.png);
 		}
 
 		.cloudy .readings li {
@@ -113,7 +115,7 @@
 		}
 
 		.sunny {
-			background: var(--color-sunny) url(images/sunny@c.png);
+			background: var(--color-sunny) url(images/3d-fluency-summer.png);
 		}
 
 		.sunny .readings li {
@@ -121,7 +123,7 @@
 		}
 
 		.rainy {
-			background: var(--color-rainy) url(images/rainy@c.png);
+			background: var(--color-rainy) url(images/3d-fluency-windy-weather.png);
 		}
 
 		.rainy .readings li {
@@ -129,7 +131,7 @@
 		}
 
 		.thunderstorms {
-			background: var(--color-thunderstorms) url(images/thunderstorms@c.png);
+			background: var(--color-thunderstorms) url(images/3d-fluency-storm.png);
 		}
 
 		.thunderstorms .readings li {
@@ -139,7 +141,7 @@
 		.accordion--item {
 			background-repeat: no-repeat;
 			background-position: center center;
-			background-size: 200%;
+			background-size: 100%;
 			border-radius: 1rem;
 			padding: 2rem;
 			display: flex;
@@ -228,7 +230,7 @@
 		}
 
 		.opened {
-			background-size: 32rem;
+			background-size: 24rem;
 			flex-basis: 32rem;
 			cursor: auto;
 		}
@@ -246,6 +248,18 @@
 			opacity: 0;
 		}
 
+		footer {
+			text-align: center;
+			padding: 2rem;
+			font-size: 0.8125rem;
+			color: black;
+		}
+
+		footer a {
+			color: green;
+			font-weight: 700;
+		}
+
 
 		/* Air */
 		/* In the video I'm using the following icons and imagery: */
@@ -253,6 +267,7 @@
 		/* - https://elements.envato.com/weather-icon-pack-3UHW3R3 */
 	</style>
 </head>
+
 <body>
 	<div id="hero">
 		<header id="main-header">
@@ -446,6 +461,11 @@
 				</ul>
 			</li>
 		</ul>
+
+		<footer>
+			Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a
+				href="https://icons8.com/illustrations">Ouch!</a>
+		</footer>
 	</div>
 
 	<script>
@@ -462,4 +482,5 @@
 		})
 	</script>
 </body>
+
 </html>
