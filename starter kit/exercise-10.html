@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,8 @@
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700&display=swap"
+		rel="stylesheet">
 
 	<style>
 		:root {
@@ -96,7 +98,7 @@
 			width: 100%;
 		}
 
-		form > div {
+		form>div {
 			position: relative;
 			margin-bottom: 2rem;
 		}
@@ -123,8 +125,8 @@
 			border-color: var(--gray-base);
 		}
 
-		input:focus + label,
-		input:valid + label {
+		input:focus+label,
+		input:valid+label {
 			transform: translateY(-1.25rem);
 			font-size: .8125rem;
 			color: var(--gray-base);
@@ -169,6 +171,7 @@
 		/* Air */
 	</style>
 </head>
+
 <body>
 	<div class="container">
 		<div class="well">
@@ -206,9 +209,13 @@
 			</form>
 
 			<p>Don't have an account? <a href="#">Sign Up</a>.</p>
+			<div>
+				Illustration by <a href="https://icons8.com/illustrations/author/627444">Julia G</a> from <a
+					href="https://icons8.com/illustrations">Ouch!</a>
+			</div>
 		</div>
 
-		<img src="illustrations/captain@c.svg" alt="Captain">
+		<img src="illustrations/lounge-yacht-captain-sailing-on-the-sea.png" alt="Captain" width="550">
 	</div>
 
 	<script>
@@ -216,8 +223,18 @@
 		const submitButtonText = document.querySelector('#btn-submit .button--text')
 
 		submitButton.addEventListener('click', (e) => {
-			// Air
+			e.preventDefault()
+
+			submitButton.classList.add('button--loading')
+
+			setTimeout(() => {
+				submitButton.classList.remove('button--loading')
+				submitButton.classList.add('button--success')
+
+				submitButtonText.innerHTML = 'Login Successful!'
+			}, 4000)
 		})
 	</script>
 </body>
+
 </html>
