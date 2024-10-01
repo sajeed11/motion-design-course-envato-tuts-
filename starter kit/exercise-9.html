@@ -17,7 +17,7 @@
 	<style>
 		/* Inspired by: https://codepen.io/webstoryboy/pen/rrLdQX */
 		:root {
-			--loader-text-color: #f6e9fe;
+			--loader-text-color: rgb(246, 233, 254);
 			--loader-dot-color: #A51FF6;
 			--loader-bg: #100319;
 		}
@@ -46,11 +46,66 @@
 		svg text {
 			font-size: 5rem;
 			stroke-width: 2;
-			letter-spacing: -6;
+			letter-spacing: -3px;
 		}
 
 		svg text.text-body {
 			stroke: var(--loader-text-color);
+			animation: 2s infinite alternate animate-stroke;
+		}
+
+		svg text#dot {
+			fill: var(--loader-dot-color);
+			stroke: var(--loader-dot-color);
+			animation: 2s infinite alternate animate-dot;
+		}
+
+		@keyframes animate-stroke {
+			0% {
+				fill: transparent;
+				stroke: var(--loader-text-color);
+				stroke-width: 3;
+				stroke-dashoffset: 25%;
+				stroke-dasharray: 0 32%;
+			}
+
+			50% {
+				fill: transparent;
+				stroke-width: var(--loader-text-color);
+				stroke-width: 3;
+			}
+
+			70% {
+				fill: rgba(246, 233, 254, 0.6);
+				stroke: var(--loader-text-color);
+				stroke-width: 3;
+			}
+
+			80% {
+				fill: rgba(246, 233, 254, 0.8);
+				stroke: var(--loader-text-color);
+				stroke-width: 3;
+			}
+
+			100% {
+				fill: var(--loader-text-color);
+				stroke: var(--loader-text-color);
+				stroke-width: 3;
+				stroke-dashoffset: -25%;
+				stroke-dasharray: 32% 0;
+			}
+		}
+
+		@keyframes animate-dot {
+
+			0%,
+			60% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
 		}
 	</style>
 </head>
@@ -61,9 +116,8 @@
 			<text x="50%" y="50%" dy=".32em" text-anchor="middle" class="text-body">
 				Graphix
 			</text>
-			<text x="50%" y="50%" dx="2.1em" dy=".32em" text-anchor="middle" class="text-body">
+			<text x="50%" y="50%" dx="2.1em" dy=".32em" text-anchor="middle" id="dot" class="text-body">
 				.
-			</text>
 			</text>
 		</svg>
 	</div>
