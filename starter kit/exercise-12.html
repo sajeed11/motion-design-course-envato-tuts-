@@ -199,6 +199,41 @@
 			background-color: var(--color-bg);
 		}
 
+		#menu--button {
+			display: flex;
+			flex-direction: column;
+			gap: 3.5px;
+			width: 2.5rem;
+			height: 2.5rem;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#menu--button span {
+			width: 25px;
+			height: 2.5px;
+			background-color: var(--color-text);
+			border-radius: 2px;
+			transition: transform .4s ease-in-out, opacity .4s ease-in-out, background-color .5s ease-in-out;
+		}
+
+		:root[menu-open] #menu--button span {
+			background-color: var(--color-bg);
+		}
+
+		:root[menu-open] #menu--button span:nth-child(1) {
+			transform: translate3d(0, 6px, 0) rotate(225deg);
+		}
+
+		:root[menu-open] #menu--button span:nth-child(2) {
+			transform: scaleX(0);
+			opacity: 0;
+		}
+
+		:root[menu-open] #menu--button span:nth-child(3) {
+			transform: translate3d(0, -6px, 0) rotate(-225deg);
+		}
+
 		footer {
 			text-align: center;
 			margin: 10rem 0 4rem;
@@ -214,8 +249,11 @@
 <body>
 	<header>
 		<div class="header-side-content">
-			<!-- Air -->
-			<!-- End Air -->
+			<button class="button" id="menu--button">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
 		</div>
 
 		<a href="/"><img src="images/logo-nn-color.svg" alt="Logo"></a>
@@ -260,7 +298,7 @@
 	</div>
 
 	<script>
-		const menuButton = document.querySelector('#menu-button')
+		const menuButton = document.querySelector('#menu--button')
 		const rootElement = document.documentElement
 
 		menuButton.addEventListener('click', () => {
