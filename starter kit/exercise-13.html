@@ -345,12 +345,8 @@
 			}
 		}
 
-		#icon-bus,
-		#icon-plane,
-		#icon-ship,
-		#icon-train {
+		.animated-icon {
 			transform-origin: center;
-			animation: 1s ease-in-out breathe;
 		}
 
 		.animated {
@@ -425,6 +421,7 @@
 				<button class="button primary">Start Your Journey</button>
 			</div>
 
+			<!-- DON'T OPEN THIS, IT'S A LARGE SVG FILE -->
 			<svg width="866" height="683" viewBox="0 0 866 683" fill="none" xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink" id="illustration">
 				<g id="Intercontinental-transportation 1" clip-path="url(#clip0_1_2)">
@@ -719,27 +716,29 @@
 			rootElement.toggleAttribute('menu-open')
 		})
 
-		function animateIcon() {
+		function animateIcons() {
 			const icons = document.querySelectorAll(".animated-icon")
 
-			icons.forEach((icon) => {
+			icons.forEach(icon => {
 				icon.classList.remove('animated')
 			})
 
 			// Force reflow to restart the animation
-			void document.querySelector(".animated-icon").ofssetWidth
+			void document.getElementById('hero').offsetWidth
 
-			icons.forEach((icon) => {
+			icons.forEach(icon => {
 				icon.classList.add('animated')
 			})
 		}
 
-		animateIcon()
+		animateIcons()
 
-		// Repeat the animation every 6 seconds	
+		// Repeat the animation every 6 seconds
 		setInterval(() => {
-			animateIcon()
-		}, 6000)
+			animateIcons()
+			console.log('Animation repeated')
+		}, 6000
+		)
 	</script>
 </body>
 
